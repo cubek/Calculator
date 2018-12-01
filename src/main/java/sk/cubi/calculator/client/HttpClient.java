@@ -34,7 +34,7 @@ public class HttpClient {
         this.userAgent = userAgent;
     }
 
-    public void makeGetRequest(Map<String, String> params) {
+    public String makeGetRequest(Map<String, String> params) {
         WebResource webResource = client.resource(this.url);
         for (Map.Entry<String, String> entry : params.entrySet()) {
             webResource = webResource.queryParam(entry.getKey(), entry.getValue());
@@ -43,6 +43,6 @@ public class HttpClient {
         // set custom User-Agent to avoid DDoS protection (default agent is banned)
         ClientResponse response = webResource.header("User-Agent", this.userAgent).get(ClientResponse.class);
 
-        System.out.println(response.getEntity(String.class));
+        return response.getEntity(String.class);
     }
 }
