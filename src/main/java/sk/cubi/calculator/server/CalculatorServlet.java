@@ -1,7 +1,7 @@
 package sk.cubi.calculator.server;
 
 import sk.cubi.calculator.facade.CalculationFacade;
-import sk.cubi.calculator.facade.DefaultCalculationFacadeImpl;
+import sk.cubi.calculator.facade.impl.DefaultCalculationFacadeImpl;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
